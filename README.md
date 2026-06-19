@@ -1,41 +1,25 @@
-# AI Powered Chatbot
+# Codec Technologies Internship Projects
 
-An AI-powered chatbot built using Python and Flask that generates responses through NLP techniques and provides an interactive chat interface.
+## Project 1 — AI Powered Chatbot
+Interactive chatbot using Python and Flask.
 
-## Features
+Tech:
+Python • Flask • HTML • CSS • JavaScript
 
-* AI generated responses
-* Interactive chat UI
-* Chat history support
-* SQLite database integration
-* Responsive frontend
+---
 
-## Tech Stack
+## Project 2 — SentiSense AI
+AI Based Sentiment Analyzer using NLP.
 
-* Python
-* Flask
-* HTML
-* CSS
-* JavaScript
-* SQLite
-* Hugging Face Transformers
+Features:
+- Sentiment Detection
+- Confidence Score
+- Modern UI
 
-## Installation
+Tech:
+Python • Flask • Transformers
 
-```bash
-pip install -r requirements.txt
-python app.py
-```
+---
 
-## Run Locally
-
-Open:
-
-http://127.0.0.1:5000
-
-## Future Improvements
-
-* User authentication
-* Multiple chat sessions
-* Deployment support
-* Better NLP models
+Developed By:
+Abdul Samad Yaqoob
