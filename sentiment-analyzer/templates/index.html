@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>SentiSense AI</title>
+
+<link
+rel="stylesheet"
+href="/static/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="title">
+
+<h1>
+
+✨ SentiSense AI
+
+</h1>
+
+<p>
+
+Analyze emotions instantly
+
+</p>
+
+
+<div class="badge">
+
+🟢 AI Online
+
+</div>
+
+
+<div class="stats">
+
+<div>
+
+⚡ Real Time
+
+</div>
+
+
+<div>
+
+🧠 NLP
+
+</div>
+
+
+<div>
+
+🎯 AI Powered
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<textarea
+
+id="txt"
+
+maxlength="300"
+
+placeholder="Write your review...">
+
+</textarea>
+
+
+
+<div id="count">
+
+0 / 300
+
+</div>
+
+
+
+<button
+
+onclick="run()"
+
+>
+
+Analyze Emotion
+
+</button>
+
+
+
+<div id="result">
+
+</div>
+
+
+
+<div id="history">
+
+<h2>
+
+Recent Analysis
+
+</h2>
+
+</div>
+
+
+
+<div class="footer">
+
+✨ Built By Abdul Samad Yaqoob
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+let txt=
+
+document.getElementById(
+"txt"
+)
+
+
+
+txt.addEventListener(
+
+"input",
+
+()=>{
+
+document
+
+.getElementById(
+"count"
+)
+
+.innerHTML=
+
+txt.value.length+
+
+" / 300"
+
+}
+
+)
+
+
+
+async function run(){
+
+let text=
+
+txt.value
+
+
+if(
+text===""
+)
+
+return
+
+
+
+document
+
+.getElementById(
+"result"
+)
+
+.innerHTML=
+
+`
+
+<div class='loading'>
+
+⏳ Analyzing...
+
+</div>
+
+`
+
+
+
+let r=
+
+await fetch(
+
+"/predict?text="+
+
+encodeURIComponent(
+text
+)
+
+)
+
+
+
+let data=
+
+await r.text()
+
+
+
+let emoji="😐"
+
+let bar="60"
+
+let color="#facc15"
+
+let desc=
+
+"Neutral sentiment detected"
+
+
+
+if(
+
+data.includes(
+"POSITIVE"
+)
+
+){
+
+emoji="😍"
+
+bar="98"
+
+color="#22c55e"
+
+desc=
+
+"Detected optimistic and positive sentiment"
+
+}
+
+else{
+
+emoji="😔"
+
+bar="90"
+
+color="#ef4444"
+
+desc=
+
+"Detected negative or emotionally low sentiment"
+
+}
+
+
+
+document
+
+.getElementById(
+"result"
+)
+
+.innerHTML=
+
+`
+
+<div class='card'>
+
+<div class='emoji'>
+
+${emoji}
+
+</div>
+
+
+<div class='prediction'>
+
+${data}
+
+</div>
+
+
+<div class='desc'>
+
+${desc}
+
+</div>
+
+
+<div class='progress'>
+
+<div
+
+class='fill'
+
+style='
+
+width:${bar}%;
+
+background:${color};
+
+'
+
+>
+
+</div>
+
+</div>
+
+
+</div>
+
+`
+
+
+
+document
+
+.getElementById(
+"history"
+)
+
+.innerHTML+=
+
+`
+
+<div class='item'>
+
+<div>
+
+${emoji}
+
+${text}
+
+</div>
+
+<div>
+
+${data}
+
+</div>
+
+</div>
+
+`
+
+
+
+txt.value=""
+
+
+document
+
+.getElementById(
+"count"
+)
+
+.innerHTML=
+
+"0 / 300"
+
+
+
+window.scrollTo({
+
+top:
+
+document.body.scrollHeight,
+
+behavior:
+
+"smooth"
+
+})
+
+
+}
+
+</script>
+
+</body>
+
+</html>
