@@ -1,25 +1,56 @@
-# Codec Technologies Internship Projects
+# 🚀 Codec Technologies — Python Internship Projects
 
-## Project 1 — AI Powered Chatbot
-Interactive chatbot using Python and Flask.
+This repository contains projects completed during my Python Developer Internship at Codec Technologies.
 
-Tech:
+---
+
+## 👨‍💻 Developer
+
+Abdul Samad Yaqoob
+
+Final Year B.E CSE (AI & ML)
+
+---
+
+# 📌 Project 1 — AI Powered Chatbot
+
+An AI-powered chatbot that generates intelligent responses through Natural Language Processing.
+
+### Features
+
+- Interactive Chat UI
+- AI Responses
+- Flask Backend
+
+### Tech Stack
+
 Python • Flask • HTML • CSS • JavaScript
 
 ---
 
-## Project 2 — SentiSense AI
-AI Based Sentiment Analyzer using NLP.
+# 📌 Project 2 — SentiSense AI
 
-Features:
+AI-powered sentiment analyzer that predicts emotions from text with confidence visualization.
+
+### Features
+
 - Sentiment Detection
 - Confidence Score
 - Modern UI
+- NLP Integration
 
-Tech:
-Python • Flask • Transformers
+### Tech Stack
+
+Python • Flask • Transformers • NLP
 
 ---
 
-Developed By:
-Abdul Samad Yaqoob
+# 📂 Repository Structure
+
+codec-technologies-python-internship
+│
+├── Project-1-AI-Chatbot
+│
+└── Project-2-SentiSense-AI
+
+---
